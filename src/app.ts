@@ -33,7 +33,7 @@ class Server {
       database: DB_DATABASE,
       synchronize: true,
       entities: ["src/entity/**/*.ts"],
-      logging: true,
+      logging: false,
     });
 
     this.userController = new UserController();

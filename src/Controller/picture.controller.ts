@@ -95,12 +95,33 @@ export class PictureController {
       const existingUser = await Picture.findOneOrFail(id);
       console.log(existingUser);
       try {
-        await Picture.remove(existingUser);
+        await Picture.delete(existingUser);
         // return res.json("Picture Successfully Deleted").status(204);
         return res.status(204).send("Picture Successfully Deleted");
       } catch (error) {
         return res.status(400).json(error);
       }
+    } catch (error) {
+      res.status(404).send("Picture not found!");
+    }
+  }
+  private async removePictureForUser(req: Request, res: Response) {
+    const user = await this.getUser(req);
+    if (!user) {
+      return res.status(404).send("User not found!");
+    }
+    try {
+      const picturesOfUser = await Picture.find({
+        where: {
+          user,
+        },
+      });
+      console.log(picturesOfUser);
+      await Picture.delete({
+        user,
+      });
+
+      return res.status(204).send("Picture Successfully Deleted");
     } catch (error) {
       res.status(404).send("Picture not found!");
     }
@@ -119,5 +140,8 @@ export class PictureController {
     this.router.get("/:id", (req, res) => this.getPictureById(req, res));
     this.router.put("/:id", (req, res) => this.updatePicture(req, res));
     this.router.delete("/:id", (req, res) => this.removePicture(req, res));
+    this.router.delete("/user/:id", (req, res) =>
+      this.removePictureForUser(req, res)
+    );
   }
 }

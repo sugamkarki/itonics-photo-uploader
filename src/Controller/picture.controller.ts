@@ -96,7 +96,6 @@ export class PictureController {
       console.log(existingUser);
       try {
         await Picture.delete(existingUser);
-        // return res.json("Picture Successfully Deleted").status(204);
         return res.status(204).send("Picture Successfully Deleted");
       } catch (error) {
         return res.status(400).json(error);

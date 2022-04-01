@@ -1,0 +1,223 @@
+{
+  "info": {
+    "_postman_id": "23a345fa-d80a-4e24-9619-d2c422d75695",
+    "name": "Picture Generator",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "CREATE USER",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\":\"Sugam Ram\",\r\n    \"lastName\":\"Karki\",\r\n    \"age\":\"17\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/users",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UPDATE USER",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"Sugam Prakash\",\r\n    \"lastName\": \"Karki\",\r\n    \"age\": \"17\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/users/1",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["users", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET USERS",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/users",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE USER",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/users/1",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["users", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET USER",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/users/8",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["users", "8"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Picture",
+      "item": [
+        {
+          "name": "CREATE PICTURE",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"url\":\"https://sth\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/pictures/user/9",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["pictures", "user", "9"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET PICTURES",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/pictures/user/9",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["pictures", "user", "9"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET ALL PICTURES",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/pictures",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["pictures"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET PICTURE BY ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/pictures/13",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["pictures", "13"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "REMOVE PICTURE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/pictures/13",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["pictures", "13"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UPDATE PICTURE",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"url\":\"sugam\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/pictures/1",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["pictures", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE ALL FOR USER",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/pictures/user/9",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["pictures", "user", "9"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
